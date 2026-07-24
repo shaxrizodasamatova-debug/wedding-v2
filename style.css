@@ -104,3 +104,105 @@ align-items:center;
 padding:30px;
 text-align:center;
 }
+..door-frame{
+display:flex;
+width:340px;
+height:470px;
+background:#ffffff;
+padding:10px;
+border-radius:18px;
+box-shadow:0 25px 60px rgba(0,0,0,.18);
+margin-bottom:45px;
+}
+
+.door{
+flex:1;
+margin:2px;
+position:relative;
+cursor:pointer;
+overflow:hidden;
+transition:transform 2s ease;
+background:linear-gradient(180deg,#67b3f4,#2c6db1);
+border-radius:12px;
+border:4px solid rgba(255,255,255,.95);
+}
+
+.leftDoor{
+transform-origin:left center;
+}
+
+.rightDoor{
+transform-origin:right center;
+}
+
+.panel{
+position:absolute;
+left:18px;
+right:18px;
+height:42%;
+border:3px solid rgba(255,255,255,.45);
+border-radius:10px;
+}
+
+.panel:first-child{
+top:18px;
+}
+
+.panel:last-child{
+bottom:18px;
+}
+
+.hero-content h1{
+font-family:'Great Vibes',cursive;
+font-size:72px;
+font-weight:400;
+color:#2d6ea8;
+line-height:1.15;
+}
+
+.hero-content h1 span{
+display:block;
+font-size:48px;
+color:#c79b39;
+margin:10px 0;
+}
+
+.hero-content p{
+margin-top:18px;
+font-size:20px;
+color:#666;
+}
+
+#openBtn{
+margin-top:35px;
+padding:18px 42px;
+border:none;
+border-radius:50px;
+background:#2d6ea8;
+color:#fff;
+font-size:20px;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 12px 25px rgba(45,110,168,.25);
+transition:.35s;
+}
+
+#openBtn:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 35px rgba(45,110,168,.35);
+}
+
+#invitation{
+display:none;
+min-height:100vh;
+padding:70px 25px;
+}
+
+.card{
+max-width:700px;
+margin:auto;
+background:white;
+border-radius:25px;
+padding:45px;
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+}
