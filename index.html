@@ -1,171 +1,199 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Shaxrizoda & Ozodbek</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozodbek & Shaxrizoda - Taklifnoma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f4f6f8;
+            color: #2c3e50;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        .invitation-container {
+            width: 100%;
+            max-width: 430px;
+            background: #ffffff;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            position: relative;
+            border: 1px solid #e0e0e0;
+        }
+        /* Rasmdagi grek ko'k eshigi va dengiz ko'rinishi */
+        .hero-banner {
+            width: 100%;
+            height: 380px;
+            background: url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, #ffffff, transparent);
+        }
+        .music-btn {
+            position: absolute;
+            bottom: 25px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #1a5f7a;
+            color: #1a5f7a;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        .content {
+            padding: 20px 25px 35px 25px;
+            text-align: center;
+        }
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: #002b5b;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .names {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 52px;
+            color: #1a5f7a;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: #d4af37;
+            margin: 15px auto 20px auto;
+        }
+        .text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+        .info-box {
+            background: #f0f7f9;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #c8e3ec;
+        }
+        .date {
+            font-family: 'Cinzel', serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: #002b5b;
+            margin-bottom: 8px;
+        }
+        .location {
+            font-size: 14px;
+            color: #1a5f7a;
+            font-weight: 600;
+        }
+        .map-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #002b5b, #1a5f7a);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 18px rgba(0, 43, 91, 0.25);
+            transition: transform 0.2s ease;
+        }
+        .map-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="background">
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.musiqa.org/mp3/Janaga_-_Без_тебя.mp3" type="audio/mpeg">
+    </audio>
 
-<div class="sun"></div>
+    <div class="invitation-container">
+        <!-- Rasm va Musiqa tugmasi -->
+        <div class="hero-banner">
+            <button class="music-btn" onclick="toggleMusic()" id="musicIcon">🎵</button>
+            <div class="hero-overlay"></div>
+        </div>
 
-<div class="flowers left"></div>
+        <!-- Taklifnoma Matni -->
+        <div class="content">
+            <div class="subtitle">To'y Taklifnomasi</div>
+            <div class="names">Ozodbek<br>&<br>Shaxrizoda</div>
 
-<div class="flowers right"></div>
+            <div class="divider"></div>
 
-<div class="particles">
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-</div>
+            <p class="text">
+                Hayotimizning eng go'zal va mas'uliyatli kunida, muhabbatimiz bayramida siz azizlarni yonimizda ko'rishdan cheksiz mamnun bo'lamiz!
+            </p>
 
-</div>
+            <div class="info-box">
+                <div class="date">🗓 6-Sentyabr, 2026</div>
+                <div class="location">📍 Buxoro shahar, "Shohsaroy" restorani</div>
+            </div>
 
-<section class="hero">
+            <a href="https://maps.google.com/?q=Buxoro+Shohsaroy+restorani" target="_blank" class="map-btn">
+                🗺 XARITADAN KO'RISH
+            </a>
+        </div>
+    </div>
 
-<div class="door-frame">
+    <script>
+        const audio = document.getElementById('bgMusic');
+        let isPlaying = false;
 
-<div id="leftDoor" class="door leftDoor">
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                document.getElementById('musicIcon').innerHTML = '🔇';
+            } else {
+                audio.play();
+                document.getElementById('musicIcon').innerHTML = '🎶';
+            }
+            isPlaying = !isPlaying;
+        }
 
-<div class="panel"></div>
-<div class="panel"></div>
-
-</div>
-
-<div id="rightDoor" class="door rightDoor">
-
-<div class="panel"></div>
-<div class="panel"></div>
-
-</div>
-
-</div>
-
-<div class="hero-content">
-
-<h1>
-
-Shaxrizoda
-
-<span>&</span>
-
-Ozodbek
-
-</h1>
-
-<p>
-
-Sizni eng baxtli kunimizga
-taklif qilamiz
-
-</p>
-
-<button id="openBtn">
-
-Taklifnomani ochish
-
-</button>
-
-</div>
-
-</section>
-
-<section id="invitation">
-
-<div class="card">
-
-<h2>
-
-Shaxrizoda
-<span>&</span>
-Ozodbek
-
-</h2>
-
-<p class="subtitle">
-
-Bizning to'yimiz
-
-</p>
-
-<div class="info">
-<p>
-📅 <strong>6-sentyabr 2026</strong>
-</p>
-
-<p>
-🕖 <strong>19:00</strong>
-</p>
-
-<p>
-📍 Buxoro shahar<br>
-Shox Saroy restorani
-</p>
-
-</div>
-
-<div id="countdown">
-
-<div class="time-box">
-<h3 id="days">00</h3>
-<span>Kun</span>
-</div>
-
-<div class="time-box">
-<h3 id="hours">00</h3>
-<span>Soat</span>
-</div>
-
-<div class="time-box">
-<h3 id="minutes">00</h3>
-<span>Daqiqa</span>
-</div>
-
-<div class="time-box">
-<h3 id="seconds">00</h3>
-<span>Soniya</span>
-</div>
-
-</div>
-
-<a
-class="mapBtn"
-href="https://yandex.uz/maps"
-target="_blank">
-
-📍 Manzilni ochish
-
-</a>
-
-</div>
-
-</section>
-
-<audio
-id="music"
-loop>
-
-<source
-src="music.mp3"
-type="audio/mpeg">
-
-</audio>
-
-<script src="script.js"></script>
+        // Ekran bosilganda avtomatik musiqani yoqish
+        document.body.addEventListener('click', function() {
+            if (!isPlaying) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    document.getElementById('musicIcon').innerHTML = '🎶';
+                }).catch(e => console.log(e));
+            }
+        }, { once: true });
+    </script>
 
 </body>
 </html>
